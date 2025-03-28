@@ -32,10 +32,14 @@ public enum SeatunnelErrorEnum {
 
     USERNAME_PASSWORD_NO_MATCHED(
             10007,
-            "username and password no matched",
-            "The user name and password do not match, please check your input"),
+            "username and password not matched or user is disabled.",
+            "The user name and password do not match or user is disabled, please check your input"),
 
     TOKEN_ILLEGAL(10008, "token illegal", "The token is expired or invalid, please login again."),
+    INVALID_AUTHENTICATION_PROVIDER(
+            10010,
+            "please provide the supported authentication providers, default DB",
+            "Invalid authentication provider [%s]"),
     NO_SUCH_JOB(10009, "no such job", "No such job. Maybe deleted by others."),
 
     /** request dolphinscheduler failed */
@@ -133,6 +137,7 @@ public enum SeatunnelErrorEnum {
     MISSING_PARAM(1777000, "param miss [{0}]", "param miss [{0}]"),
     PARAM_CAN_NOT_BE_NULL(60018, "", "param [%s] can not be null or empty"),
     INVALID_PARAM(60019, "", "param [%s] is invalid. %s"),
+    TASK_NAME_ALREADY_EXISTS(60020, "task name already exists", "task [%s] already exists"),
     RESOURCE_NOT_FOUND(404, "", "%s"),
     ;
 
